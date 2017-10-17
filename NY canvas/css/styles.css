@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, section {
+	display: block;
+}
+
+#container,
+.wrapper  {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+#header {
+	height: 100px;
+	width: 100%;
+	background: #581845;
+	display: flex;
+    align-items: center;
+}
+#header h1 {
+	color: #fff;
+}
+#container {
+	padding-top: 30px;
+	font-size: 0;
+}
+#sidebar,
+#options,
+#canvas  {
+	height: 400px;
+	display: inline-block;
+	border: 1px solid #888;
+	box-sizing: border-box;
+}
+#sidebar {
+	width: 30%;
+	margin-right: 5%;
+	text-align: left;
+	border: none;
+	vertical-align: top;
+}
+#act_btns {
+	margin-bottom: 10px;
+}
+.btn {
+	color: #fff;
+	font-size: 14px;
+	background: #900c3f;
+	border: none;
+	padding: 10px 20px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.btn:hover {
+	box-shadow: 0px 3px 11px 1px #888;
+}
+#options  {
+	width: 100%;
+	overflow-y: auto;
+}
+.option {
+	width: 44%;
+	height: 109px;
+	display: inline-block;
+	margin: 11px;
+	cursor: pointer;
+	position: relative;
+}
+.option div {
+	width: 100%;
+	height: inherit;
+	border: 1px solid #888;
+	overflow: hidden;
+}
+.option div img {
+	/* width: 100% !important;
+	height: auto !important; */
+	width: 100% ;
+	height: auto ;
+	
+	-webkit-filter: grayscale(0) blur(0);
+	filter: grayscale(0) blur(0);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.option:hover img{
+	-webkit-filter: grayscale(100%) blur(1px);
+	filter: grayscale(100%) blur(1px);
+}
+.option p {
+	color:#000;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+	transition: ease-in-out 0.5s all;
+	opacity: 0;
+}
+.option:hover p {
+	opacity: 1;
+}
+.details {
+	display: none;
+	width: 100%;
+	height: inherit;
+}
+.details div {
+	display: inline-block;
+	width: 29%;
+	margin: 2%;
+	cursor: pointer;
+}
+.details div img {
+	width: 100%;
+	height: auto;
+}
+.details div img.active {
+	box-shadow: 0 0 5px 4px lightgreen;
+}
+#canvas {
+	/* width: 50%; */
+	margin-top: 46px;
+}
+#footer {
+	position: fixed;
+	bottom: 0;
+
+	color: #fff;
+	height: 10%;
+	width: 100%;
+	background: #696969;
+}
+#footer .wrapper {
+	margin: 2% 0 0 0;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    /* border-radius: 10px; */
+}
+ 
+::-webkit-scrollbar-thumb {
+    /* border-radius: 10px; */
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-corner {
+	margin: 10px;
+}
