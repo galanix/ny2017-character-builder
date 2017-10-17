@@ -17,12 +17,7 @@
                 body        : { elem : "", coord1 : "", coord2 : ""},
                 tail        : { elem : "", coord1 : "", coord2 : ""},
                 toys        : { elem : "", coord1 : "", coord2 : ""},
-                accessories : { elem : "", coord1 : "", coord2 : ""}
-            // "face" : "",
-            // "body" : "",           
-            // "tail" : "",            
-            // "toys" : "",           
-            // "accessories" : ""          
+                accessories : { elem : "", coord1 : "", coord2 : ""}        
         };
     
 
@@ -61,8 +56,9 @@
         });
         
         
+        
         function drawingCanvas(event,part, coord1, coord2) {
-            clear_canvas(coord1, coord2);
+            clear_canvas();
             $("." + part +" .imageBlock > img").removeClass('active');
             $(event.target).addClass('active');
             
@@ -76,6 +72,9 @@
             console.log(activeElements);
             fill_canvas(document.getElementById(activeElements[part].elem), coord1, coord2);
             localStorage.setItem( 'activeElems', JSON.stringify(activeElements) );                
+            renderDogs();
+            var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+            console.log(dataURL);
             
             $('.remove').on('click',function() {
                 clear_canvas(coord1, coord2);
@@ -95,15 +94,16 @@
         });
 
         // canvas
-        // var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-        // console.log(dataURL);
+        var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+        console.log(dataURL);
          
         function fill_canvas(img, x, y) {
             console.log(img);
             ctx.drawImage(img, 0, 0, img.naturalHeight, img.naturalWidth, x, y, 100, 100);               
         }
         function clear_canvas(x, y) {
-            ctx.clearRect(x, y, 100, 100);               
+            ctx.clearRect(0, 0, canvas.width, canvas.height);        
+            //ctx.clearRect(x, y, 100, 100);        
         }
 
         function renderDogs() {
