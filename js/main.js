@@ -13,11 +13,11 @@
         var accessImg = ["animal-paw-print","bone", "collar", "pile-of-dung", "prize-badge-with-paw-print"];
         
         var activeElements = {
-                face        : { elem : "", coord1: 0, coord2 : 0 },
-                body        : { elem : "", coord1 : 20, coord2 : 100},
-                tail        : { elem : "", coord1 : 60, coord2 : 110},
-                toys        : { elem : "", coord1 : 150, coord2 : 150},
-                accessories : { elem : "", coord1 : 150, coord2 : 0}
+                face        : { elem : "", coord1 : "", coord2 : "" },
+                body        : { elem : "", coord1 : "", coord2 : ""},
+                tail        : { elem : "", coord1 : "", coord2 : ""},
+                toys        : { elem : "", coord1 : "", coord2 : ""},
+                accessories : { elem : "", coord1 : "", coord2 : ""}
             // "face" : "",
             // "body" : "",           
             // "tail" : "",            
@@ -47,8 +47,8 @@
         addingImages("accessories", accessImg);
 
         $('.imageBlock').ready(function() {
-            renderDogs();
-        })
+            renderDogs()
+        });
         
         $(".option").on('click', function() {
             
@@ -69,8 +69,12 @@
             console.log(event.target.id);
             
             activeElements[part].elem = $(event.target).attr('id');
+            activeElements[part].coord1 = coord1;
+            activeElements[part].coord2 = coord2;
+            
+            
             console.log(activeElements);
-            fill_canvas(document.getElementById(activeElements[part]), coord1, coord2);
+            fill_canvas(document.getElementById(activeElements[part].elem), coord1, coord2);
             localStorage.setItem( 'activeElems', JSON.stringify(activeElements) );                
             
             $('.remove').on('click',function() {
@@ -109,13 +113,14 @@
                 console.log(obj);
                 
                 for( var key in obj ) {
-                    console.log(obj[key]);
-                    if(obj[key]) {
-                        fill_canvas(document.getElementById(obj[key]), 0, 0); 
+                    console.log(obj[key].elem);
+                    if(obj[key].elem || obj[key].coord1 || obj[key].coord2) {
+                        fill_canvas(document.getElementById(obj[key].elem), obj[key].coord1, obj[key].coord2); 
                     }
                     
                 }
             } catch (err) {
+                console.log(err);
                 console.log("Cannot read local storage");
             }   
         }
