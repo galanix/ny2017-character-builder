@@ -1,0 +1,78 @@
+.ib_wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-o-flex-flow: row wrap;
+	flex-flow: row wrap;
+
+	width: 96%;
+	border: 1px solid #3498DB;
+	margin: 15px auto;
+	padding: 15px;
+}
+
+.canvas_container {
+	margin-right: 30px;
+	margin-bottom: 30px;
+}
+
+canvas {
+	display: block;
+	width: 300px;
+	height: 300px;
+	border: 3px solid #3498DB;
+	margin-bottom: 20px;
+}
+
+.cb_btn {
+	display: inline-block;
+	background-color: #3498DB;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	margin-right: 15px;
+	padding: 7px 12px;
+
+	-webkit-transition: background-color 0.3s ease;
+	-o-transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
+}
+
+.cb_btn:hover { background-color: #2980B9; }
+
+.gender_panel { margin-bottom: 15px; }
+
+.male_panel {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	-o-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.male_panel .cb_btn,
+.female_panel .cb_btn {
+	margin-bottom: 15px;
+}
+
+.male_panel .cb_btn:last-of-type,
+.female_panel .cb_btn:last-of-type 
+{ margin-right: 0; }
+
+.option_panel {
+	width: 300px;
+	height: 200px;
+	outline: 1px solid black;
+	margin-top: 15px;
+}

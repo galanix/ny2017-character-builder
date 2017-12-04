@@ -1,0 +1,37 @@
+{
+	"male": [
+		{
+			"head": [
+				{
+					"id": 1,
+					"src": "head/head1.png"
+				},
+				{
+					"id": 2,
+					"src": "head/head2.png"
+				},
+				{
+					"id": 3,
+					"src": "head/head3.png"
+				},
+			],
+			"hat": [
+				{
+					"id": 4,
+					"src": "hat/hat1.png"
+				},
+				{
+					"id": 5,
+					"src": "hat/hat2.png"
+				},
+				{
+					"id": 6,
+					"src": "hat/hat3.png"
+				},
+			]
+		}
+	],
+	"female": [
+
+	]
+}
